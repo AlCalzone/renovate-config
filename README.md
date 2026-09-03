@@ -11,7 +11,7 @@ Shared [Renovate](https://docs.renovatebot.com/) configuration. Repositories ref
 
 | Preset | Use for |
 |---|---|
-| `default` | Base for everything. Monthly window on the 1st (Europe/Berlin), 7 day minimum release age, `rangeStrategy: bump`, automerge for devDependency patch/minor, dependency patch and GitHub Actions minor/patch. TypeScript minor/major wait for dashboard approval. |
+| `default` | Base for everything. Monthly window on the 1st (Europe/Berlin), 7 day minimum release age, `rangeStrategy: bump`, automerge for devDependency patch/minor, dependency patch and GitHub Actions minor/patch. Renovate merges itself once all checks on the branch pass (`platformAutomerge: false`), so repos without branch protection are safe too. TypeScript minor/major wait for dashboard approval. |
 | `library` | Published npm packages. No lockfile maintenance, since transitive dependencies are resolved by consumers. |
 | `app` | Deployed applications. Adds one monthly lockfile maintenance PR. |
 

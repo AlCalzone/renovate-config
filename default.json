@@ -1,43 +1,76 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Base config for AlCalzone repositories. Matches the previous Dependabot behavior: monthly, bump ranges, direct dependencies only, 7 day release age.",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "timezone": "Europe/Berlin",
-  "schedule": ["* 0-5 1 * *"],
+  "schedule": [
+    "* 0-5 1 * *"
+  ],
   "minimumReleaseAge": "7 days",
   "internalChecksFilter": "strict",
   "rangeStrategy": "bump",
   "prConcurrentLimit": 5,
-  "labels": ["dependencies"],
-  "lockFileMaintenance": { "enabled": false },
+  "platformAutomerge": false,
+  "labels": [
+    "dependencies"
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  },
   "vulnerabilityAlerts": {
-    "labels": ["dependencies", "security"],
+    "labels": [
+      "dependencies",
+      "security"
+    ],
     "minimumReleaseAge": null,
-    "schedule": ["at any time"]
+    "schedule": [
+      "at any time"
+    ]
   },
   "packageRules": [
     {
       "description": "TypeScript minor and major releases are breaking. A human approves them on the dashboard",
-      "matchPackageNames": ["typescript"],
-      "matchUpdateTypes": ["minor", "major"],
+      "matchPackageNames": [
+        "typescript"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "major"
+      ],
       "dependencyDashboardApproval": true
     },
     {
       "description": "Automerge patch and minor updates of devDependencies",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["patch", "minor"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "automerge": true
     },
     {
       "description": "Automerge patch updates of dependencies",
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["patch"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true
     },
     {
       "description": "Automerge minor and patch updates of GitHub Actions",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ]
