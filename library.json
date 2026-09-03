@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Published npm libraries. Transitive dependencies are left alone because consumers resolve them on their own",
+  "extends": ["github>AlCalzone/renovate-config"]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Deployed applications. One monthly lockfile maintenance PR refreshes transitive dependencies",
+  "extends": ["github>AlCalzone/renovate-config"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* 0-5 1 * *"]
+  }
+}
