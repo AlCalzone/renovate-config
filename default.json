@@ -27,7 +27,8 @@
     "minimumReleaseAge": null,
     "schedule": [
       "at any time"
-    ]
+    ],
+    "commitMessageSuffix": ""
   },
   "packageRules": [
     {
